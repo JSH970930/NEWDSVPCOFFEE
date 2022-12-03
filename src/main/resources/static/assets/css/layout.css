@@ -1,0 +1,22 @@
+@charset "EUC-KR";
+
+.container2{
+ 	width:70%;
+    margin: 0 auto;
+    position: relative;
+}
+.content{
+	margin:0 40px;
+	width:100%;
+	position:relative;
+	height:auto;
+}
+
+  .col-xl-10{
+   width:100%;
+   }
+
+.footer{
+	margin:0;
+	position:relative;
+}
