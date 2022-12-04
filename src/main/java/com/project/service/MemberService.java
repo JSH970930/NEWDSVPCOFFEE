@@ -2,6 +2,7 @@ package com.project.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,10 +15,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;
 
+import com.project.DataNotFoundException;
 import com.project.controller.MemberController;
 import com.project.dto.MemberDto;
 import com.project.entity.Member;
 import com.project.repository.MemberRepository;
+import com.project.repository.MemberRepository2;
 
 import lombok.RequiredArgsConstructor;
 
@@ -27,6 +30,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberService implements UserDetailsService{
 
 	private final MemberRepository memberRepository;
+	private final MemberRepository2 memberRepository2;
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(MemberController.class.getName());
 	
@@ -76,7 +80,15 @@ public class MemberService implements UserDetailsService{
 		memberRepository.save(member);
 		return member.getId();
 	}
-	
+	public Member getUser(String username) {
+        Optional<Member> member = this.memberRepository2.findByUsername(username);
+        if (member.isPresent()) {
+            return member.get();
+        } else {
+            throw new DataNotFoundException("member not found");
+        }
+    }
+
 	
 
 }
