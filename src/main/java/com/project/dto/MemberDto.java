@@ -99,7 +99,7 @@ public class MemberDto {
 	}
 
 	public Member toEntity() {
-		this.role = "USER";//관리자 계정 생성을 원하면 USER 대신 ADMIN으로 변경한 후 회원가입
+		this.role = "ADMIN";//관리자 계정 생성을 원하면 USER 대신 ADMIN으로 변경한 후 회원가입
 		if(birth == null) {
 			if(birthMonth.length()==1) {
 				birthMonth = "0"+birthMonth;
