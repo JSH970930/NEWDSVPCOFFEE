@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 //		http.cors().and();
 //		http.csrf().disable();
-
+		http.csrf().ignoringAntMatchers("/notice/**");
 		http.csrf().ignoringAntMatchers("/board/**");
 
 		http.csrf().ignoringAntMatchers("/economy_download/**");
