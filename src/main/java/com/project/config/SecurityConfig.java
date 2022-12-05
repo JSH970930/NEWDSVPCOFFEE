@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.firewall.DefaultHttpFirewall;
+import org.springframework.security.web.firewall.HttpFirewall;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.project.service.MemberService;
@@ -58,7 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 //		http.cors().and();
 //		http.csrf().disable();
-
+		http.csrf().ignoringAntMatchers("/question/**");
+		http.csrf().ignoringAntMatchers("/notice/**");
 		http.csrf().ignoringAntMatchers("/board/**");
 
 		http.csrf().ignoringAntMatchers("/economy_download/**");
@@ -91,14 +94,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(memberService)//서비스에서 가입된 사용자인지 확인함
 		.passwordEncoder(passwordEncoder());
+		
 	}
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-	web.ignoring().antMatchers("/css/**", "/js/**", "/images/**","/files/**");} // static 디렉토리 하위 파일은 인증을 무시하도록 설정
+	web.ignoring().antMatchers("/css/**", "/js/**", "/images/**","/files/**"); // static 디렉토리 하위 파일은 인증을 무시하도록 설정
+	web.httpFirewall(defaultHttpFirewall());
 	
+	}
 	
-	
+	@Bean
+	public HttpFirewall defaultHttpFirewall() {
+		return new DefaultHttpFirewall();
+	}
 	
 
 }
