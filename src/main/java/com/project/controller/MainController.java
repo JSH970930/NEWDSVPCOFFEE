@@ -20,5 +20,11 @@ public class MainController {
 	public String test() {
 		return "/admin/test";
 	}
+	
+	@GetMapping("/popup")
+	public String makePopup() {
+	    return "/popup";
+	}
+	
 
 }
