@@ -46,36 +46,39 @@ xmlns:sec="http://thymeleaf.org/extras/spring-security">
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li class="dropdown"><a href="http://localhost:8090/board/policy/list"><span>커피전문점 관리</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="http://localhost:8090/board/policy/list"><span>DSVP 사이트 소개</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="https://eiec.kdi.re.kr/policy/epSubjectList.do">주제별보기</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/policy/publisherList.do">발간처별보기</a></li>
+                            
+                            <li><a href="https://eiec.kdi.re.kr/center/introduce.do">인사말</a></li>      
+                    <!--         <li><a href="https://eiec.kdi.re.kr/center/organization.do">QNA</a></li>
+                            <li><a href="http://localhost:8090/board/notice/list">공지사항</a></li> -->
+                            <!-- <li><a href="https://eiec.kdi.re.kr/policy/publisherList.do">발간처별보기</a></li>
                             <li><a href="https://eiec.kdi.re.kr/publish/archList.do">정책세미나영상</a></li>
                             <li><a href="https://eiec.kdi.re.kr/policy/customList.do">맞춤형정책서비스</a></li>
-                            <li><a href="http://epts.kdi.re.kr/">경제정책시계열서비스</a></li>
+                            <li><a href="http://epts.kdi.re.kr/">경제정책시계열서비스</a></li> -->
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="http://localhost:8090/publish/publishmain"><span>발행물</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="http://localhost:8090/publish/publishmain"><span>전체 커피전문점</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="http://localhost:8090/publish/publishmain">나라경제</a></li>
-                            <li><a href="http://localhost:8090/board/publishment/Expert_list">e경제정보리뷰</a></li>
+                            <li><a href="http://localhost:8090/publish/publishmain">맞춤커피전문점</a></li>
+                        <!--     <li><a href="http://localhost:8090/board/publishment/Expert_list">e경제정보리뷰</a></li>
                             <li><a href="https://eiec.kdi.re.kr/publish/ebMain.do">Economic Bulletin</a></li>
                             <li><a href="http://localhost:8090/board/publishment/pubbook_List">단행본</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/publish/videoReport.do">정책미디어</a></li>
+                            <li><a href="https://eiec.kdi.re.kr/publish/videoReport.do">정책미디어</a></li> -->
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="http://localhost:8090/board/economy/economy_list"><span>교육</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="http://localhost:8090/board/economy/economy_list"><span>추천커피전문점</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="http://localhost:8090/board/economy/economy_list">교사용 수업자료</a></li>    
-                            <li><a href="https://eiec.kdi.re.kr/material/qnaList.do">멀티미디어자료</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/material/pageoneList.do">학습자료</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/material/ecoProgram.do">교육프로그램</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/material/clickList.do">Click 경제교육</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/material/wordDic.do">시사용어사전</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/material/textbookList.do">경제교과서검정</a></li>
+                            <li><a href="http://localhost:8090/board/economy/economy_list">DS성향이란?</a></li>    
+                            <li><a href="https://eiec.kdi.re.kr/material/qnaList.do">DV성향이란?</a></li>
+                            <li><a href="https://eiec.kdi.re.kr/material/pageoneList.do">DP성향이란?</a></li>
+                            <li><a href="https://eiec.kdi.re.kr/material/ecoProgram.do">SV</a></li>
+                            <li><a href="https://eiec.kdi.re.kr/material/clickList.do">SP</a></li>
+                            <li><a href="https://eiec.kdi.re.kr/material/wordDic.do">VP</a></li>
+                 
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="http://localhost:8090/board/bigdata/issuetrend_list"><span>이슈&분석</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                 <!--    <li class="dropdown"><a href="http://localhost:8090/board/bigdata/issuetrend_list"><span>이슈&분석</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
                             <li><a href="http://localhost:8090/board/bigdata/issuetrend_list">이슈 트렌드</a></li> 
                             <li><a href="http://localhost:8090/board/bigdata/emerging_list">이머징 이슈</a></li>
@@ -83,14 +86,14 @@ xmlns:sec="http://thymeleaf.org/extras/spring-security">
                             <li><a href="http://localhost:8090/board/bigdata/economy_list">경제 지표</a></li>
                             <li><a href="http://localhost:8090/board/bigdata/bigdatajisu_list">빅데이터 지수</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown"><a href="https://eiec.kdi.re.kr/center/introduce.do"><span>사이트소개</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    </li> -->
+                <li class="dropdown"><a href="https://eiec.kdi.re.kr/center/introduce.do"><span>사이트소개</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="https://eiec.kdi.re.kr/center/introduce.do">소장인사말</a></li>      
-                            <li><a href="https://eiec.kdi.re.kr/center/organization.do">조직도</a></li>
+                       <!--      <li><a href="https://eiec.kdi.re.kr/center/introduce.do">인사말</a></li>      
+                            <li><a href="https://eiec.kdi.re.kr/center/organization.do">QNA</a></li> -->
                             <li><a href="http://localhost:8090/board/notice/list">공지사항</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/center/manager.do">주요업무담당자</a></li>
-                            <li><a href="https://eiec.kdi.re.kr/center/map.do">오시는길</a></li>
+                           <!--  <li><a href="https://eiec.kdi.re.kr/center/manager.do">주요업무담당자</a></li>
+                            <li><a href="https://eiec.kdi.re.kr/center/map.do">오시는길</a></li> -->
                         </ul>
                     </li>
                     <li>

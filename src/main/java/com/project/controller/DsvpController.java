@@ -66,11 +66,11 @@ public class DsvpController {
 		
 		try {
 			if("DP".equals(check)) {
-				model.addAttribute("resultMap", boardService.findByTitleContaining(pageable, check));
+				model.addAttribute("resultMap", boardService.findByContentContaining(pageable, check));
 			}else if("DS".equals(check)) {
-				model.addAttribute("resultMap", boardService.findByTitleContaining(pageable, check));
+				model.addAttribute("resultMap", boardService.findByContentContaining(pageable, check));
 			}else if("DV".equals(check)) {
-				model.addAttribute("resultMap", boardService.findByTitleContaining(pageable, check));
+				model.addAttribute("resultMap", boardService.findByContentContaining(pageable, check));
 			}
 			
 		} catch(Exception e) {

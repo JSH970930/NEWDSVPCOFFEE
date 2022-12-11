@@ -9,7 +9,7 @@ layout:decorate="~{layouts/board}">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>寃쎌젣�젙梨낆옄猷�</title>
+    <title>DSVP 커피선호도 조사</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -39,7 +39,7 @@ layout:decorate="~{layouts/board}">
     <link rel="stylesheet" href="/assets/css/policy.css" />
 
     <!--    Jquery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
  
@@ -55,7 +55,7 @@ layout:decorate="~{layouts/board}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="/assets/js/side.js"></script>
     <style>
@@ -81,27 +81,31 @@ layout:decorate="~{layouts/board}">
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
-										<h2>寃쎌젣�젙梨낆젙蹂�</h2>
+										<h2>DSVP 커피선호도 조사</h2>
 									</header>
 									<ul>
 									
 										<li>
-											<span class="opener">二쇱젣蹂꾨낫湲�</span>
+											<span class="opener">DSVP</span>
 											<ul>
-												<li><a href="https://eiec.kdi.re.kr/policy/epSubjectList.do">二쇱젣蹂꾨낫湲�</a></li>
-												<li><a href="https://eiec.kdi.re.kr/policy/keSubjectList.do">援��궡�쇅�뿰援ъ옄猷뚯＜�젣</a></li>
+												<li><a href="https://eiec.kdi.re.kr/policy/epSubjectList.do">DS</a></li>
+												<li><a href="https://eiec.kdi.re.kr/policy/keSubjectList.do">DV</a></li>
 											</ul>
 										</li>
 										<li>
-											<span><a href="https://eiec.kdi.re.kr/policy/publisherList.do">諛쒓컙泥섎퀎蹂닿린</a></span>
+											<span><a href="https://eiec.kdi.re.kr/policy/publisherList.do">DP</a></span>
 										
 										</li>
 										<li>
-											<span ><a href="https://eiec.kdi.re.kr/publish/archList.do">�젙梨낆꽭誘몃굹�쁺�긽</a></span>
+											<span ><a href="https://eiec.kdi.re.kr/publish/archList.do">SV</a></span>
 											
 										</li>
 										<li>
-											<span><a href="https://eiec.kdi.re.kr/policy/customList.do">留욎땄�삎�젙梨낆꽌鍮꾩뒪</a></span>
+											<span><a href="https://eiec.kdi.re.kr/policy/customList.do">SP</a></span>
+											
+										</li>
+										<li>
+											<span><a href="https://eiec.kdi.re.kr/policy/customList.do">VP</a></span>
 											
 										</li>
 										
@@ -120,51 +124,26 @@ layout:decorate="~{layouts/board}">
 
 <div layout:fragment="content">
 
-  <!--content �솕硫� �쟾泥대�� �벝 寃쎌슦�뿉�뒗 臾띠뼱二쇰뒗 class瑜� container濡�, css瑜� board濡� �걣�뼱�삤怨� quick, side媛� �엳�뒗 寃쎌슦�뿉�뒗 class紐낆쓣 �떎瑜닿쾶 二쇨린  -->
 	<div class="containers">
-	    <form action="/board/policy/list" id="frm" method="get">
+	  	  <form action="/board/policy/list" id="frm" method="get">
+	
 			<div class="col-md-12 mt-4">
-			 	<div class="main-notice">
-			 		<div class="button" sec:authorize="isAuthenticated()">
-			 		<h4 class="notice">寃쎌젣�젙梨낆젙蹂�</h4>
-			 			<button type="button" class="btn btn-danger" onclick="fnDelete()">�궘�젣</button>
-			        	<button type="button" class="btn btn-primary" onclick="javascript:location.href='/board/policy/write'">�벑濡�</button>
+			<div>
+			 	<div class="main-notice" th:each="list,index : ${resultMap.list}" th:with="paging=${resultMap.paging}">
+			 	<a><strong th:text="${list.title}" id="title1"></strong></a>
+			 	<table>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" id="address"></td>
+				<td><input type="button" id="searchBtn" value="searchBtn"></td>
+			</tr>
+			</table>
+			 	<div id ="map" style="width:350px;height:250px"></div>
+			 		
 					</div>
 					</div>
-			        <table class="table">
-			            <thead class="thead-strong">
-			                <tr class="thead1">
-			                    <th width="2%"><input type="checkbox" id="chkAll"></th>
-			                    <th width="90%" class="totalCnt1">珥� <span th:text="${resultMap.totalCnt}"></span> 嫄�</th>
-			                    <th width="8%">�옉�꽦�옄</th>
-			                </tr>
-			            </thead>
-			            <tbody class="tbody">
-			            	<tr th:each="list,index : ${resultMap.list}" th:with="paging=${resultMap.paging}">
-								<td>
-									<input type="checkbox" name="deleteId" th:value="${list.id}">
-								</td>
-								<!-- <td>
-									<span th:text="${(resultMap.totalCnt - index.index) - (paging.pageNumber * paging.pageSize)}"></span>
-								</td> -->
-								<td>
-									<a th:href="@{./view(id=${list.id})}">
-									<strong th:text="${list.title}" id="title1"></strong></a>
-									<div th:text="${list.registerTime}"></div>
-								</td>
-								<td>
-									<span th:text="${list.registerId}"></span>
-								</td>
-								<!-- <td>
-									<span th:text="${list.readCnt}"></span>
-								</td> -->
-								<!-- <td>
-									
-								</td> -->
-								</tr>
-							<tr>
-			            </tbody>
-			        </table>
+				
+			      
 			        <div class="row">
 						<div class="col">
 							<ul class="pagination">
@@ -199,12 +178,12 @@ layout:decorate="~{layouts/board}">
 					</div>
     	<div class="search">
 			<select name ="type" class="type1">
-            	<option selected value="">�쟾泥�</option>
-            	<option value = "title" >�젣紐�</option>
-            	<option value = "content">�궡�슜</option>
+            	<option selected value="">선택</option>
+            	<option value = "title" >제목</option>
+            	<option value = "content">내용</option>
         	</select>
         <input type="text" name="searchKeyword" class="text1">
-        <button type="submit" class="submit1">寃��깋</button>
+        <button type="submit" class="submit1">검색하기</button>
     	</div>
     </div>
     </form>
@@ -213,6 +192,7 @@ layout:decorate="~{layouts/board}">
      <!--遺��듃�뒪�듃�옪 js, jquery 異붽�-->
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/lib/bootstrap.min.js"></script>
+    <script th:inline="javascript" type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bd2c9dcea6ff1605f517b8390dcb39e0&libraries=services"></script>
     <script th:inline="javascript">
     	// header checkbox event
     	$("#chkAll").click(function() {
@@ -239,7 +219,7 @@ layout:decorate="~{layouts/board}">
 			let delInpChkLen = $("input[name='deleteId']:checked").length;
 			
 			if (delInpChkLen > 0) {
-				if (confirm("�궘�젣�븯�떆寃좎뒿�땲源�?")) {
+				if (confirm("삭제하시겠습니까")) {
 					let frm = $("#frm");
 					frm.attr("action","/board/policy/delete");
 					frm.attr("method","post");
@@ -249,6 +229,47 @@ layout:decorate="~{layouts/board}">
 				alert("Not selected.");
 			}
 		}
+		
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	    mapOption = {
+	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };  
+	
+	
+	$('#searchBtn').click(function(){
+		// 버튼을 click했을때
+		
+		// 지도를 생성합니다    
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		
+		// 주소-좌표 변환 객체를 생성합니다
+		var geocoder = new kakao.maps.services.Geocoder();
+		
+		// 주소로 좌표를 검색합니다
+		geocoder.addressSearch($('#address').val(), function(result, status) {
+	
+		    // 정상적으로 검색이 완료됐으면 
+		     if (status === kakao.maps.services.Status.OK) {
+		        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+		        
+		        // 결과값으로 받은 위치를 마커로 표시합니다
+		        var marker = new kakao.maps.Marker({
+		            map: map,
+		            position: coords
+		        });
+	
+		        // 인포윈도우로 장소에 대한 설명을 표시합니다
+		        var infowindow = new kakao.maps.InfoWindow({
+		            content: '<div style="width:150px;text-align:center;padding:6px 0;">장소</div>'
+		        });
+		        infowindow.open(map, marker);
+	
+		        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+		        map.setCenter(coords);
+		    } 
+		});  
+	});
 	</script>
 
 </div>

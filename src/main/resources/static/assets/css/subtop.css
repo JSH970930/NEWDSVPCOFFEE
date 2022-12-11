@@ -13,30 +13,36 @@
 
   
 .top_img.sub01{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top01.jpg");
+     background-image: url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg'); 
+    background-color: #964b00;
 }
 
 
 .top_img.sub02{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top02_1.jpg");
+     background-image: url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg'); 
+    background-color: #964b00;
 }
 .top_img.sub03{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top03.jpg");
+    background-image:url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg'); 
+    background-color: #964b00;
 }
 .top_img.sub04{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top04.jpg");
+     background-image: url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg');  
+    background-color: #964b00;
 }
 .top_img.sub05{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top06.jpg");
+     background-image: url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg'); 
+    background-color: #964b00;
 }
 .top_img.sub06{
-    background-image: url("/assets/img/notice.png");
-        background-color: #1a7eb8;
+   background-image: url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg'); 
+    background-color: #964b00;
 }
 .top_img.sub07{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top02_4.jpg");
+    background-image: url('https://cdn.imweb.me/thumbnail/20211220/463db52dcb5cd.jpg'); 
+    background-color: #964b00;
 }
-
 .top_img.sub08{
-    background-image: url("https://eiec.kdi.re.kr/res/img/sub_top02_6.jpg");
+    background-image: url('/images/mainimages/Ä¿ÇÇ.jpg'); 
+    background-color: #964b00;
 }
