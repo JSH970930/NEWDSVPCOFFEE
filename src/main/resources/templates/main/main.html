@@ -198,11 +198,14 @@ layout:decorate="~{layouts/main}">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
+    <script th:inline="javascript">
         $('.carousel').carousel({
             interval: 2000 //기본 5초
         });
-
+        
+		function showPopup(){
+			window.open("/popup", "DSVP설문", "width=600, height=400, left=400, top=300")
+		}
     </script>
 
     <div class="container-xl">
@@ -225,7 +228,7 @@ layout:decorate="~{layouts/main}">
                 <!-- 슬라이드 쇼 -->
                 <div class="carousel-item active" id="i0">
                     <!--가로-->
-                    <a href="http://localhost:8090/popup"> <img class="d-block w-100" src="/images/mainimages/커피설문2.jpg" alt="First slide">
+                    <a> <img class="d-block w-100" src="/images/mainimages/커피설문2.jpg" alt="First slide" style="cursor:pointer;" onClick ="showPopup();">
                     </a>
                 </div>
                 <div class="carousel-item" id="i1">

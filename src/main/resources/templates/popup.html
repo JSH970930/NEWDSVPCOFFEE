@@ -1,60 +1,124 @@
 <!DOCTYPE html>
-<html
-xmlns:th="http://www.thymeleaf.org"
-xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout=http://www.ultraq.net.nz/thymeleaf/layout>
 <head>
 <meta charset="utf-8">
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
- 
- 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<th:block layout:fragment="css">
+<style>
+.popup-wrap{
+  background-color:rgba(0,0,0,.3); 
+  justify-content:center; 
+  align-items:center;    
+  position:fixed;         
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;            
+  display:none; 
+  display:flex;
+  padding:15px; 
+}
+.popup{
+  width:100%;               
+  max-width:600px;          
+  border-radius:10px;       
+  overflow:hidden;          
+  background-color:brown; 
+  box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3); 
+}
+.popup-head{
+  width:100%;
+  height:50px;  
+  display:flex; 
+  align-items:center;
+  justify-content:center;
+}
+.popup-body{                
+  width:100%;
+  background-color:#ffffff; 
+}
+.body-content{              
+  width:100%;
+  padding:30px;             
+}
+.body-contentbox{           
+  word-break:break-word;    
+  overflow-y:auto;          
+  min-height:400px;         
+  max-height:500px;         
+}
+.popup-foot{                      
+  width:100%;
+  height:30px;
+}
+.pop-btn{
+  display:inline-flex;           
+  width:50%;                      
+  height:100%;                    
+  justify-content:center;        
+  align-items:center;           
+  float:left;                   
+  color:#ffffff;                
+  cursor:pointer;             
+}
+.pop-btn.confirm{               
+  border-right:1px solid #3b5fbf; 
+}
+#subbtn{
+  float:right;
+  margin-right:30px;
+  width:50px;
+  height:30px;
+}
+</style>
+</th:block>
 <meta charset="EUC-KR">
 <title>DSVP 커피선호도 조사입니다</title>
 </head>
 <body>
-<h1>카페를 고를 때 선호조 조사입니다.</h1>
-<form name="subform" id="subform">
-
-<input type="radio" name="check1" value="D">
-<span>맛</span><br>
-<input type="radio" name="check1" value="S">
-<span>디저트</span><br>
-<input type="radio" name="check1" value="V">
-<span>분위기 및 시야</span><br>
-<input type="radio" name="check1" value="P">
-<span>가격, 가성비</span><br>
-
-<input type="radio" name="check2" value="D">
-<span>맛</span><br>
-<input type="radio" name="check2" value="S">
-<span>디저트</span><br>
-<input type="radio" name="check2" value="V">
-<span>분위기 및 시야</span><br>
-<input type="radio" name="check2" value="P">
-<span>가격, 가성비</span><br>
-
-
-<input type="button" name="subbtn" value="subbtn" id="subbtn">
-</form>
+	<div class="container">
+		<div class="popup-wrap" id="popup">
+			<div class="popup">
+				<div class="popup-head">
+					<h1 class="head-title">카페를 고를 때 선호도 조사입니다.</h1>
+				</div>
+				<form name="subform" id="subform">
+					 <div class="popup-body">
+					 <div class="body-content">
+					<input type="radio" name="check1" value="D"> <span>맛</span><br>
+					<input type="radio" name="check1" value="S"> <span>디저트</span><br>
+					<input type="radio" name="check1" value="V"> <span>분위기	및 시야</span><br> <input type="radio" name="check1" value="P">
+					<span>가격, 가성비</span><br><br> 
+					<b>--------------------------------------</b><br>
+					<br><input type="radio" name="check2" value="D">
+					<span>맛</span><br>
+					<input type="radio" name="check2" value="S"> <span>디저트</span><br>
+					<input type="radio" name="check2" value="V"> <span>분위기 및 시야</span><br> <input type="radio" name="check2" value="P">
+					<span>가격, 가성비</span><br><br> 
+					</div>
+					 </div>
+					 <div class="popup-foot">
+					<input type="button" name="subbtn" value="완료" id="subbtn">
+					 </div>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 
 <script th:inline="javascript">
-
-    $('#subbtn').click(function () {
-      // getter
-      var radioVal1 = $('input[name="check1"]:checked').val();
-      var radioVal2 = $('input[name="check2"]:checked').val();
-      var superVal = radioVal1+radioVal2
-      console.log(superVal)
-      if(radioVal1==radioVal2){
-    	  alert("중복된 값을 체크했습니다")
-      }
-      $("#subform").attr("action", "/DSVP/"+superVal+"/").submit();
-    });
-
-  
-
-
-
+	$('#subbtn').click(function() {
+		// getter
+		var radioVal1 = $('input[name="check1"]:checked').val();
+		var radioVal2 = $('input[name="check2"]:checked').val();
+		var superVal = radioVal1 + radioVal2
+		console.log(superVal)
+		if (radioVal1 == radioVal2) {
+			alert("중복된 값을 체크했습니다")
+		}
+		$("#subform").attr("action", "/DSVP/" + superVal + "/").submit();
+	});
 </script>
 
 </html>
