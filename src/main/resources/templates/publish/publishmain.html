@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>발행물</title>
+<title>DSVP소개</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -409,187 +409,53 @@ dl, ul, ol, li {
 	<div layout:fragment="content">
 		<!--content 화면 전체를 쓸 경우에는 묶어주는 class를 container로, css를 board로 끌어오고 quick, side가 있는 경우에는 class명을 다르게 주기  -->
 		<div class="containers">
-			<div class="state_lnb">
-				<ul class="lnb">
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100001&sel_year=2022&sel_month=10">특집</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100009&sel_year=2022&sel_month=10">이슈</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100002&sel_year=2022&sel_month=10">인터뷰</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100021&sel_year=2022&sel_month=10">Now</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100008&sel_year=2022&sel_month=10">연중기획</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100005&sel_year=2022&sel_month=10">경제정책해설</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100010&sel_year=2022&sel_month=10">세계는 지금</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/columnList.do?sel_year=2022&sel_month=10">칼럼</a></li>
-					<li><a href="https://eiec.kdi.re.kr/publish/naraVideoList.do?sel_year=2022&sel_month=10" class="mov">영상자료</a></li>
-				</ul>
-			</div>
+		
 			<div id="state_lnk">
 				<div class="eco_sel">
-					<form class="searchForm">
-						<span class="lb_select selck"> <select id="sel_year"
-							name="sel_year" title="sel_year">
-
-								<option value="2022" selected="">2022년</option>
-
-								<option value="2021">2021년</option>
-
-								<option value="2020">2020년</option>
-
-								<option value="2019">2019년</option>
-
-								<option value="2018">2018년</option>
-
-								<option value="2017">2017년</option>
-
-								<option value="2016">2016년</option>
-
-								<option value="2015">2015년</option>
-
-								<option value="2014">2014년</option>
-
-								<option value="2013">2013년</option>
-
-								<option value="2012">2012년</option>
-
-								<option value="2011">2011년</option>
-
-								<option value="2010">2010년</option>
-
-								<option value="2009">2009년</option>
-
-								<option value="2008">2008년</option>
-
-								<option value="2007">2007년</option>
-
-								<option value="2006">2006년</option>
-
-								<option value="2005">2005년</option>
-
-								<option value="2004">2004년</option>
-
-								<option value="2003">2003년</option>
-
-								<option value="2002">2002년</option>
-
-								<option value="2001">2001년</option>
-
-								<option value="2000">2000년</option>
-
-								<option value="1999">1999년</option>
-
-								<option value="1998">1998년</option>
-
-								<option value="1997">1997년</option>
-
-								<option value="1996">1996년</option>
-
-								<option value="1995">1995년</option>
-
-								<option value="1994">1994년</option>
-
-								<option value="1993">1993년</option>
-
-								<option value="1992">1992년</option>
-
-								<option value="1991">1991년</option>
-
-								<option value="1990">1990년</option>
-
-						</select>
-						</span> 
-						<span class="lb_select selck"> <select id="sel_month"
-							name="sel_month" title="sel_month">
-
-
-								<option value="01">01월</option>
-
-
-
-								<option value="02">02월</option>
-
-
-
-								<option value="03">03월</option>
-
-
-
-								<option value="04">04월</option>
-
-
-
-								<option value="05">05월</option>
-
-
-
-								<option value="06">06월</option>
-
-
-
-								<option value="07">07월</option>
-
-
-
-								<option value="08">08월</option>
-
-
-
-								<option value="09">09월</option>
-
-
-
-								<option value="10" selected="">10월</option>
-
-
-
-								<option value="11">11월</option>
-
-
-
-								<option value="12">12월</option>
-
-
-						</select>
-						</span>
-						<button type="button" class="btn"
-							onclick="$('#searchForm').submit();">보기</button>
-					</form>
+				
 				</div>
 				<!-- <button type="button" class="btn btn-danger" onclick="javascript:location.href='/publish/publishsub'">독자문의</button>
 				<button type="button" class="btn btn-danger" onclick="javascript:location.href='/publish/publishsub'">구독하기</button> -->
 				<ul class="box eco_read">
 					<li>
-						<a href="https://eiec.kdi.re.kr/publish/naraPreList.do?sel_year=2022&sel_month=10">과월호 보기</a></li>
-					<li>
-						<a href="https://eiec.kdi.re.kr/userdata/nara/202210/202210.pdf" target="_blank">PDF 전체보기</a></li>
-					<li>
-						<a href="http://ks-ebook.net/nara/ebook/202210/EBook.htm" target="_blank">eBook 보기</a></li>
+						<h3 style="text-align:left;"><strong>DSVP 인사말</strong></h3>
+					
 				</ul>
-				<ul class="box eco_plus">
-					<li class="add"><a
-						href="http://localhost:8090/member/login?">구독
-							신청</a></li>
-					<li class="qna"><a
-						href="https://eiec.kdi.re.kr/publish/naraQnaList.do?sel_year=2022&sel_month=10">독자문의</a></li>
-				</ul>
+			
 			</div>
 			<div class="image">
-				<div class=publish1>
-				<img src="https://eiec.kdi.re.kr/userdata/nara/202210/202210.jpg">
+				<div class=publish1 style="width:586px;height:789px;">
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				<!-- 여기에다가 소개 텍스트 입력  -->
+				
 				</div>
 				<div class=publish2>
-				<img src="https://eiec.kdi.re.kr/userdata/nara/202210/aaaQyR4INKwlofLDQnZly20220928142255rtsje.jpg" class="image2">
+				<img src="/images/mainimages/커피학회2.jpg" class="image2" style="width:586px;height:394px;">
 					<ul class="st_list mv_list">
 					<li><a
-						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14007&sel_year=2022&sel_month=10">건전재정
-							기조 아래 639조 원 편성…사회적 약자 보호와 미래 대비</a></li>
+						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14007&sel_year=2022&sel_month=10">
+							DSVP 커피선호도 설문</a></li>
 					<li><a
-						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14008&sel_year=2022&sel_month=10">초격차
-							전략기술 확보, 국가 디지털 혁신에 우선순위</a></li>
+						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14008&sel_year=2022&sel_month=10">커피 하루에 몇잔이 적당할까?</a></li>
 					<li><a
-						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14009&sel_year=2022&sel_month=10">식량주권
-							확보와 청년농 육성에 역점</a></li>
+						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14009&sel_year=2022&sel_month=10">커피 학회의 컬럼</a></li>
 					<li><a
-						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14010&sel_year=2022&sel_month=10">반도체,
-							원전 등 미래 전략산업 지원 강화한다</a></li>
+						href="https://eiec.kdi.re.kr/publish/naraView.do?fcode=00002000040000100001&cidx=14010&sel_year=2022&sel_month=10">2022년 바리스타 자격증 시험 안내</a></li>
 					</ul>
 					<div class="more_btn">
 						<a href="https://eiec.kdi.re.kr/publish/naraList.do?fcode=00002000040000100001&sel_year=2022&sel_month=10">더보기</a></div>

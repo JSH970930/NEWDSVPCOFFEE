@@ -76,10 +76,10 @@ layout:decorate="~{layouts/board2}">
 <div layout:fragment="content">
 	<div id="loginform">
 	<div id="loginbox">
-	<h2>로그인</h2>
-	<h1>DSVP 커피선호도 홈페이지에</h1>
-	<h1>오신것을 환영합니다!</h1><br>
-	<h4	>가입하신 아이디와 비밀번호를 입력해 주세요.</h4></div>
+	<h2>아이디는</h2>
+	<span th:text ="${memberdto.username}"></span>
+	<h1>입니다!</h1><br>
+</div>
 		<div class = "container-edit">
 			<form role="form" method="post" action="/member/login">
 				<div class="form-group">

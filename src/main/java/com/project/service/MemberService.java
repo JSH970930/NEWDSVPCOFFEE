@@ -88,6 +88,20 @@ public class MemberService implements UserDetailsService{
             throw new DataNotFoundException("member not found");
         }
     }
+	
+	
+	@Transactional
+	public MemberDto findByName(String pm) {
+		// TODO Auto-generated method stub
+		Member member = memberRepository.findByName(pm).get();
+		MemberDto memberdto = MemberDto.builder()
+				.name(member.getName())
+				.username(member.getUsername())
+				.build();
+		return memberdto;
+	}
+	
+	
 
 	
 
