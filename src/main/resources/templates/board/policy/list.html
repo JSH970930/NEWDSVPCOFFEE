@@ -9,7 +9,7 @@ layout:decorate="~{layouts/board}">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>경제정책자료</title>
+    <title>寃쎌젣�젙梨낆옄猷�</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -81,27 +81,27 @@ layout:decorate="~{layouts/board}">
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
-										<h2>경제정책정보</h2>
+										<h2>寃쎌젣�젙梨낆젙蹂�</h2>
 									</header>
 									<ul>
 									
 										<li>
-											<span class="opener">주제별보기</span>
+											<span class="opener">二쇱젣蹂꾨낫湲�</span>
 											<ul>
-												<li><a href="https://eiec.kdi.re.kr/policy/epSubjectList.do">주제별보기</a></li>
-												<li><a href="https://eiec.kdi.re.kr/policy/keSubjectList.do">국내외연구자료주제</a></li>
+												<li><a href="https://eiec.kdi.re.kr/policy/epSubjectList.do">二쇱젣蹂꾨낫湲�</a></li>
+												<li><a href="https://eiec.kdi.re.kr/policy/keSubjectList.do">援��궡�쇅�뿰援ъ옄猷뚯＜�젣</a></li>
 											</ul>
 										</li>
 										<li>
-											<span><a href="https://eiec.kdi.re.kr/policy/publisherList.do">발간처별보기</a></span>
+											<span><a href="https://eiec.kdi.re.kr/policy/publisherList.do">諛쒓컙泥섎퀎蹂닿린</a></span>
 										
 										</li>
 										<li>
-											<span ><a href="https://eiec.kdi.re.kr/publish/archList.do">정책세미나영상</a></span>
+											<span ><a href="https://eiec.kdi.re.kr/publish/archList.do">�젙梨낆꽭誘몃굹�쁺�긽</a></span>
 											
 										</li>
 										<li>
-											<span><a href="https://eiec.kdi.re.kr/policy/customList.do">맞춤형정책서비스</a></span>
+											<span><a href="https://eiec.kdi.re.kr/policy/customList.do">留욎땄�삎�젙梨낆꽌鍮꾩뒪</a></span>
 											
 										</li>
 										
@@ -120,23 +120,23 @@ layout:decorate="~{layouts/board}">
 
 <div layout:fragment="content">
 
-  <!--content 화면 전체를 쓸 경우에는 묶어주는 class를 container로, css를 board로 끌어오고 quick, side가 있는 경우에는 class명을 다르게 주기  -->
+  <!--content �솕硫� �쟾泥대�� �벝 寃쎌슦�뿉�뒗 臾띠뼱二쇰뒗 class瑜� container濡�, css瑜� board濡� �걣�뼱�삤怨� quick, side媛� �엳�뒗 寃쎌슦�뿉�뒗 class紐낆쓣 �떎瑜닿쾶 二쇨린  -->
 	<div class="containers">
 	    <form action="/board/policy/list" id="frm" method="get">
 			<div class="col-md-12 mt-4">
 			 	<div class="main-notice">
 			 		<div class="button" sec:authorize="isAuthenticated()">
-			 		<h4 class="notice">경제정책정보</h4>
-			 			<button type="button" class="btn btn-danger" onclick="fnDelete()">삭제</button>
-			        	<button type="button" class="btn btn-primary" onclick="javascript:location.href='/board/policy/write'">등록</button>
+			 		<h4 class="notice">寃쎌젣�젙梨낆젙蹂�</h4>
+			 			<button type="button" class="btn btn-danger" onclick="fnDelete()">�궘�젣</button>
+			        	<button type="button" class="btn btn-primary" onclick="javascript:location.href='/board/policy/write'">�벑濡�</button>
 					</div>
 					</div>
 			        <table class="table">
 			            <thead class="thead-strong">
 			                <tr class="thead1">
 			                    <th width="2%"><input type="checkbox" id="chkAll"></th>
-			                    <th width="90%" class="totalCnt1">총 <span th:text="${resultMap.totalCnt}"></span> 건</th>
-			                    <th width="8%">작성자</th>
+			                    <th width="90%" class="totalCnt1">珥� <span th:text="${resultMap.totalCnt}"></span> 嫄�</th>
+			                    <th width="8%">�옉�꽦�옄</th>
 			                </tr>
 			            </thead>
 			            <tbody class="tbody">
@@ -155,9 +155,9 @@ layout:decorate="~{layouts/board}">
 								<td>
 									<span th:text="${list.registerId}"></span>
 								</td>
-								<!-- <td>
+								 <td>
 									<span th:text="${list.readCnt}"></span>
-								</td> -->
+								</td> 
 								<!-- <td>
 									
 								</td> -->
@@ -199,18 +199,18 @@ layout:decorate="~{layouts/board}">
 					</div>
     	<div class="search">
 			<select name ="type" class="type1">
-            	<option selected value="">전체</option>
-            	<option value = "title" >제목</option>
-            	<option value = "content">내용</option>
+            	<option selected value="">�쟾泥�</option>
+            	<option value = "title" >�젣紐�</option>
+            	<option value = "content">�궡�슜</option>
         	</select>
         <input type="text" name="searchKeyword" class="text1">
-        <button type="submit" class="submit1">검색</button>
+        <button type="submit" class="submit1">寃��깋</button>
     	</div>
     </div>
     </form>
     </div>
     
-     <!--부트스트랩 js, jquery 추가-->
+     <!--遺��듃�뒪�듃�옪 js, jquery 異붽�-->
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/lib/bootstrap.min.js"></script>
     <script th:inline="javascript">
@@ -239,7 +239,7 @@ layout:decorate="~{layouts/board}">
 			let delInpChkLen = $("input[name='deleteId']:checked").length;
 			
 			if (delInpChkLen > 0) {
-				if (confirm("삭제하시겠습니까?")) {
+				if (confirm("�궘�젣�븯�떆寃좎뒿�땲源�?")) {
 					let frm = $("#frm");
 					frm.attr("action","/board/policy/delete");
 					frm.attr("method","post");

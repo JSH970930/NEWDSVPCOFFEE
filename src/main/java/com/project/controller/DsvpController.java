@@ -31,6 +31,7 @@ import com.project.dto.Policy_BoardRequestDto;
 
 import com.project.dto.FileDto;
 import com.project.dto.MemberDto;
+import com.project.dto.NoticeRequestDto;
 import com.project.entity.Policy_Board;
 
 import com.project.service.FileService;
@@ -51,6 +52,20 @@ public class DsvpController {
 	
 	private final Policy_BoardService boardService;
 
+	
+	@GetMapping("/DSVP/*/view")
+public String getNoticeViewPage(Model model, Policy_BoardRequestDto boardrequestdto) throws Exception {
+		
+		try {
+			if(boardrequestdto.getId() != null) {
+				model.addAttribute("info", boardService.findById(boardrequestdto.getId()));
+			}
+		} catch (Exception e) {
+			throw new Exception(e.getMessage()); 
+		}
+		
+		return "/DSVP/DP";
+	}
 	
 	@GetMapping("/DSVP/*")
 	public String getFreeBoardListPage(Model model, @RequestParam(required = false, defaultValue = "0")
@@ -79,7 +94,17 @@ public class DsvpController {
 		
 		return "DSVP/DP";
 	}
-
+	
+	/*
+	 * @PostMapping("/board/policy/readcnt") public String getReadcnt(Model model,
+	 * Policy_BoardRequestDto boardRequestDto) throws Exception {
+	 * 
+	 * try { if(boardRequestDto.getId() != null) { model.addAttribute("info",
+	 * boardService.findById(boardRequestDto.getId())); } } catch (Exception e) {
+	 * throw new Exception(e.getMessage()); } System.out.println(model);
+	 * 
+	 * return "redirect:/DSVP/DP"; }
+	 */
 
 
 	

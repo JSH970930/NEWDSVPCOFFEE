@@ -137,9 +137,13 @@ layout:decorate="~{layouts/board}">
 			</tr>
 			</table>
 			 	<div class="main-notice" th:each="list,index : ${resultMap.list}" >
-			 	<strong th:text="${list.title}" id="title1"></strong>
-			 	<input type="button" onclick='count("plus")' src="/images/mainimages/하트이미지2.jpg" style="width:50px;height:50px;">
-			 	<span>좋아요</span><div id='result'>0</div>
+			 	<div> 
+				<span th:text="${list.title}"></span>
+				<a th:href="@{./view(id=${list.id})}"><span>좋아요</span></a>
+								</div>
+			 	
+			 	<button id="readcnt"src="/images/mainimages/하트이미지2.jpg" style="width:50px;height:50px;" onclick="fnreadcnt()"></button>
+			 	<span th:text="${list.readCnt}"></span>
 
 					</div>
 			<div id ="map" style="width:350px;height:250px"></div>
@@ -233,6 +237,17 @@ layout:decorate="~{layouts/board}">
 			}
 		}
 		
+	    
+	/* 	function fnreadnct() {
+
+					let readcnt = $("#frm");
+					readcnt.attr("action","/board/policy/readcnt");
+					readcnt.attr("method","post");
+					readcnt.submit();
+				
+			}  */
+		
+		
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	    mapOption = {
 	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -274,23 +289,7 @@ layout:decorate="~{layouts/board}">
 		});  
 	});
 	
-	function count(type)  {
-		  // 결과를 표시할 element
-		  const resultElement = document.getElementById('result');
-		  
-		  // 현재 화면에 표시된 값
-		  let number = resultElement.innerText;
-		  
-		  // 더하기/빼기
-		  if(type === 'plus') {
-		    number = parseInt(number) + 1;
-		  }else if(type === 'minus')  {
-		    number = parseInt(number) - 1;
-		  }
-		  
-		  // 결과 출력
-		  resultElement.innerText = number;
-		}
+
 	</script>
 
 </div>

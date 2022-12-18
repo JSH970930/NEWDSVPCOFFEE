@@ -160,6 +160,7 @@ private final Policy_BoardRepository boardRepository;
 	
 	
 	public Policy_BoardResponseDto findById(Long id) {
+		boardRepository.updateBoardReadCntInc(id);
 		return new Policy_BoardResponseDto(boardRepository.findById(id).get());
 	}
 	

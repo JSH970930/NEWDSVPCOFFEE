@@ -34,9 +34,9 @@ public interface Policy_BoardRepository extends JpaRepository<Policy_Board, Long
 			+ "WHERE ID = :#{#boardRequestDto.id}";
 			
 	
-	static final String UPDATE_BOARD_READ_CNT_INC = "UPDATE policy_board "
-			+ "SET READ_CNT = READ_CNT + 1 "
-			+ "WHERE ID = : id";
+	static final String UPDATE_NOTICE_READ_CNT_INC = "UPDATE policy_board " + "SET read_cnt = read_cnt + 1 "
+			+ "WHERE id = :id";
+
 	
 	static final String DELETE_BOARD = "DELETE FROM policy_board "
 			+ "WHERE ID IN (:deleteList)";
@@ -48,7 +48,7 @@ public interface Policy_BoardRepository extends JpaRepository<Policy_Board, Long
 	
 	@Transactional
 	@Modifying
-	@Query(value = UPDATE_BOARD_READ_CNT_INC, nativeQuery = true)
+	@Query(value = UPDATE_NOTICE_READ_CNT_INC, nativeQuery = true)
 	public int updateBoardReadCntInc(@Param("id") Long id);
 	
 	@Transactional
