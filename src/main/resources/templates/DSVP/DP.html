@@ -9,7 +9,7 @@ layout:decorate="~{layouts/board}">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>DSVP 커피선호도 조사</title>
+    <title>DSVP 而ㅽ뵾�꽑�샇�룄 議곗궗</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -81,31 +81,31 @@ layout:decorate="~{layouts/board}">
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
-										<h2>DSVP 커피선호도 조사</h2>
+										<h2>DSVP</h2>
 									</header>
 									<ul>
 									
 									
 											
 										
-										<li><a href="http://localhost:8090/DSVP/DS/?check1=D&check2=S">DS</a></li>
-										<li><a href="http://localhost:8090/DSVP/DV/?check1=D&check2=V">DV</a></li>
+										<li><a href="http://localhost:8090/DSVP/DS/?check1=D&check2=S">DS:음료와 디저트</a></li>
+										<li><a href="http://localhost:8090/DSVP/DV/?check1=D&check2=V">DV:음료와 분위기</a></li>
 											
 										
 										<li>
-											<span><a href="http://localhost:8090/DSVP/DP/?check1=D&check2=P">DP</a></span>
+											<span><a href="http://localhost:8090/DSVP/DP/?check1=D&check2=P">DP:음료와 가격</a></span>
 										
 										</li>
 										<li>
-											<span ><a href="http://localhost:8090/DSVP/SV/?check1=S&check2=V">SV</a></span>
+											<span ><a href="http://localhost:8090/DSVP/SV/?check1=S&check2=V">SV:디저트와 분위기</a></span>
 											
 										</li>
 										<li>
-											<span><a href="http://localhost:8090/DSVP/SP/?check1=S&check2=P">SP</a></span>
+											<span><a href="http://localhost:8090/DSVP/SP/?check1=S&check2=P">SP:디저트와 가격</a></span>
 											
 										</li>
 										<li>
-											<span><a href="http://localhost:8090/DSVP/VP/?check1=V&check2=P">VP</a></span>
+											<span><a href="http://localhost:8090/DSVP/VP/?check1=V&check2=P">VP:분위기와 가격</a></span>
 											
 										</li>
 										
@@ -131,7 +131,7 @@ layout:decorate="~{layouts/board}">
 			<div>
 				<table>
 			<tr>
-				<td style="font-size:30px;">주소</td>
+				<td style="font-size:30px;">二쇱냼</td>
 				<td><input type="text" id="address" style="display:none;"></td>
 				<td><input type="button" id="searchBtn" value="searchBtn" style="display:none;"></td>
 			</tr>
@@ -142,7 +142,7 @@ layout:decorate="~{layouts/board}">
 			
 								</div>
 			 	
-			 	<a th:href="@{./view(id=${list.id})}" style="width:50px;height:50px;"><img src="/images/mainimages/하트이미지2.jpg" style="width:50px;height:50px;"></a>
+			 	<a th:href="@{./view(id=${list.id})}" style="width:50px;height:50px;"><img src="/images/mainimages/�븯�듃�씠誘몄�2.jpg" style="width:50px;height:50px;"></a>
 			 	<span th:text="${list.readCnt}"></span>
 
 					</div>
@@ -185,18 +185,18 @@ layout:decorate="~{layouts/board}">
 					</div>
     	<div class="search">
 			<select name ="type" class="type1">
-            	<option selected value="">선택</option>
-            	<option value = "title" >제목</option>
-            	<option value = "content">내용</option>
+            	<option selected value="">�꽑�깮</option>
+            	<option value = "title" >�젣紐�</option>
+            	<option value = "content">�궡�슜</option>
         	</select>
         <input type="text" name="searchKeyword" class="text1">
-        <button type="submit" class="submit1">검색하기</button>
+        <button type="submit" class="submit1">寃��깋�븯湲�</button>
     	</div>
     </div>
     </form>
     </div>
     
-     <!--遺��듃�뒪�듃�옪 js, jquery 異붽�-->
+     <!--�겫占쏙옙�뱜占쎈뮞占쎈뱜占쎌삫 js, jquery �빊遺쏙옙-->
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/lib/bootstrap.min.js"></script>
     <script th:inline="javascript" type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bd2c9dcea6ff1605f517b8390dcb39e0&libraries=services"></script>
@@ -226,7 +226,7 @@ layout:decorate="~{layouts/board}">
 			let delInpChkLen = $("input[name='deleteId']:checked").length;
 			
 			if (delInpChkLen > 0) {
-				if (confirm("삭제하시겠습니까")) {
+				if (confirm("�궘�젣�븯�떆寃좎뒿�땲源�")) {
 					let frm = $("#frm");
 					frm.attr("action","/board/policy/delete");
 					frm.attr("method","post");
@@ -238,10 +238,10 @@ layout:decorate="~{layouts/board}">
 		}
 		
 	
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		var mapContainer = document.getElementById('map'), // 吏��룄瑜� �몴�떆�븷 div 
 	    mapOption = {
-	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-	        level: 3 // 지도의 확대 레벨
+	        center: new kakao.maps.LatLng(33.450701, 126.570667), // 吏��룄�쓽 以묒떖醫뚰몴
+	        level: 3 // 吏��룄�쓽 �솗�� �젅踰�
 	    };  
 
 		function fnmap(item){
@@ -249,35 +249,35 @@ layout:decorate="~{layouts/board}">
 		let chk_item = $(item).text();
 		
 	
-			// 버튼을 click했을때
+			// 踰꾪듉�쓣 click�뻽�쓣�븣
 			
-			// 지도를 생성합니다    
+			// 吏��룄瑜� �깮�꽦�빀�땲�떎    
 			var map = new kakao.maps.Map(mapContainer, mapOption); 
 			
-			// 주소-좌표 변환 객체를 생성합니다
+			// 二쇱냼-醫뚰몴 蹂��솚 媛앹껜瑜� �깮�꽦�빀�땲�떎
 			var geocoder = new kakao.maps.services.Geocoder();
 			
-			// 주소로 좌표를 검색합니다
+			// 二쇱냼濡� 醫뚰몴瑜� 寃��깋�빀�땲�떎
 			console.log(chk_item)
 			geocoder.addressSearch(chk_item, function(result, status) {
 		
-			    // 정상적으로 검색이 완료됐으면 
+			    // �젙�긽�쟻�쑝濡� 寃��깋�씠 �셿猷뚮릱�쑝硫� 
 			     if (status === kakao.maps.services.Status.OK) {
 			        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 			        
-			        // 결과값으로 받은 위치를 마커로 표시합니다
+			        // 寃곌낵媛믪쑝濡� 諛쏆� �쐞移섎�� 留덉빱濡� �몴�떆�빀�땲�떎
 			        var marker = new kakao.maps.Marker({
 			            map: map,
 			            position: coords
 			        });
 		
-			        // 인포윈도우로 장소에 대한 설명을 표시합니다
+			        // �씤�룷�쐢�룄�슦濡� �옣�냼�뿉 ���븳 �꽕紐낆쓣 �몴�떆�빀�땲�떎
 			        var infowindow = new kakao.maps.InfoWindow({
-			            content: '<div style="width:150px;text-align:center;padding:6px 0;">장소</div>'
+			            content: '<div style="width:150px;text-align:center;padding:6px 0;">�옣�냼</div>'
 			        });
 			        infowindow.open(map, marker);
 		
-			        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+			        // 吏��룄�쓽 以묒떖�쓣 寃곌낵媛믪쑝濡� 諛쏆� �쐞移섎줈 �씠�룞�떆�궢�땲�떎
 			        map.setCenter(coords);
 			    } 
 			});  
@@ -291,34 +291,34 @@ layout:decorate="~{layouts/board}">
 	
 	
 		$('#searchBtn').click(function(){
-		// 버튼을 click했을때
+		// 踰꾪듉�쓣 click�뻽�쓣�븣
 		
-		// 지도를 생성합니다    
+		// 吏��룄瑜� �깮�꽦�빀�땲�떎    
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
 		
-		// 주소-좌표 변환 객체를 생성합니다
+		// 二쇱냼-醫뚰몴 蹂��솚 媛앹껜瑜� �깮�꽦�빀�땲�떎
 		var geocoder = new kakao.maps.services.Geocoder();
 		
-		// 주소로 좌표를 검색합니다
+		// 二쇱냼濡� 醫뚰몴瑜� 寃��깋�빀�땲�떎
 		geocoder.addressSearch($('#address').val(), function(result, status) {
 	
-		    // 정상적으로 검색이 완료됐으면 
+		    // �젙�긽�쟻�쑝濡� 寃��깋�씠 �셿猷뚮릱�쑝硫� 
 		     if (status === kakao.maps.services.Status.OK) {
 		        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 		        
-		        // 결과값으로 받은 위치를 마커로 표시합니다
+		        // 寃곌낵媛믪쑝濡� 諛쏆� �쐞移섎�� 留덉빱濡� �몴�떆�빀�땲�떎
 		        var marker = new kakao.maps.Marker({
 		            map: map,
 		            position: coords
 		        });
 	
-		        // 인포윈도우로 장소에 대한 설명을 표시합니다
+		        // �씤�룷�쐢�룄�슦濡� �옣�냼�뿉 ���븳 �꽕紐낆쓣 �몴�떆�빀�땲�떎
 		        var infowindow = new kakao.maps.InfoWindow({
-		            content: '<div style="width:150px;text-align:center;padding:6px 0;">장소</div>'
+		            content: '<div style="width:150px;text-align:center;padding:6px 0;">�옣�냼</div>'
 		        });
 		        infowindow.open(map, marker);
 	
-		        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+		        // 吏��룄�쓽 以묒떖�쓣 寃곌낵媛믪쑝濡� 諛쏆� �쐞移섎줈 �씠�룞�떆�궢�땲�떎
 		        map.setCenter(coords);
 		    } 
 		});  

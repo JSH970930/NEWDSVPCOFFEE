@@ -116,9 +116,16 @@
 		console.log(superVal)
 		if (radioVal1 == radioVal2) {
 			alert("중복된 값을 체크했습니다")
+			return false;
 		}
+		
+		
+
 		$("#subform").attr("action", "/DSVP/" + superVal + "/").submit();
+		opener.location.href='http://localhost:8090/DSVP/'+superVal+'?check1='+radioVal1+'&check2='+radioVal2; 
+		window.close();
 	});
+	
 </script>
 
 </html>

@@ -89,11 +89,11 @@ layout:decorate="~{layouts/main}">
         <a class="search-btn">
             <button class="fas fa-search"></button>
         </a>
-       
-        <button class="detail-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">상세검색</button>
- </form>
+        </form>
+       <!--  <button class="detail-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">상세검색</button> -->
+
         <!-- offcanvas-->
-        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+     <!--    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
 
             <div class="offcanvas-header">
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -114,13 +114,13 @@ layout:decorate="~{layouts/main}">
                     </div>
                 </div>
 
-                <!-- Tab을 구성할 영역 설정-->
+                Tab을 구성할 영역 설정
                 <div id="fill">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#economic" data-toggle="tab">추천커피전문점</a></li>
                         <li><a href="#pub" data-toggle="tab">&nbsp;사이트소개 </a></li>
-                   <!--      <li><a href="#edu" data-toggle="tab">&nbsp;교육자료</a></li>
-                        <li><a href="#bigdata" data-toggle="tab">&nbsp;이슈&분석</a></li> -->
+                        <li><a href="#edu" data-toggle="tab">&nbsp;교육자료</a></li>
+                        <li><a href="#bigdata" data-toggle="tab">&nbsp;이슈&분석</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="economic">
@@ -144,7 +144,7 @@ layout:decorate="~{layouts/main}">
                             <input type="hidden" id="reviewYn" name="reviewYn" th:value="${searchchk2}">
                             <input type="hidden" id="bookYn" name="bookYn" th:value="${searchchk2}">
                         </div>
-                        <!-- <div class="tab-pane fade" id="edu">
+                        <div class="tab-pane fade" id="edu">
                             <label><input type="checkbox" id="chkAll3" name="chkAll3"><span>전체</span></label>
                             <label> <input type="checkbox" name="chk3" id ="teach"><span>DS</span></label>
                             <label> <input type="checkbox" name="chk3"  id = "multi"><span>DV</span></label>
@@ -163,7 +163,7 @@ layout:decorate="~{layouts/main}">
                             <label> <input type="checkbox" name="chk4" id = "public"><span> 여론분석</span></label>
                             <label> <input type="checkbox" name="chk4" id = "nations"> <span>국부론</span></label>
 
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div id="date">
@@ -183,7 +183,7 @@ layout:decorate="~{layouts/main}">
 
             </div>
             </form>
-        </div>
+        </div> -->
 
     </div>
 
@@ -216,14 +216,14 @@ layout:decorate="~{layouts/main}">
             <div class="carousel-inner">
                <!--버튼-->
             <div class="indicators">
-                <ul>
+               <!--  <ul>
                     <li  id='bt0' >
                         <div class="active" data-bs-target="#demo"  data-bs-slide-to="0"  aria-current="true" aria-label="Slide 1"><button type="button">DSVP 커피선호도 설문</button></div>
                     </li>
                     <li  id='bt1'><div  data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"><button type="button">커피 하루에 몇잔이 적당할까?</button></div></li>
                     <li id='bt2'><div  data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"><button type="button">커피 학회의 컬럼</button></div></li>
-                    <li id='bt3'> <div  data-bs-target="#demo" data-bs-slide-to="3" aria-label="Slide 4"><button type="button">2022년 바리스타 자격증 시험 안내</button></div></li>
-                </ul>
+                    <li id='bt3'> <div  data-bs-target="#demo" data-bs-slide-to="3" aria-label="Slide 4"><button type="button"></button></div></li>
+                </ul> -->
             </div>
                 <!-- 슬라이드 쇼 -->
                 <div class="carousel-item active" id="i0">
@@ -240,7 +240,7 @@ layout:decorate="~{layouts/main}">
                         <img class="d-block w-100" src="/images/mainimages/커피학회2.jpg" alt="Third slide"> </a>
                 </div>
                 <div class="carousel-item" id="i3">
-                    <a href="https://www.kca-coffee.org/cms/FrCon/index.do?MENU_ID=130">
+                    <a href="https://www.kca-coffee.org/cms/FrCon/index.do?MENU_ID=520&CONTENTS_NO=1 ">
                         <img class="d-block w-100" src="/images/mainimages/bari.jpg" alt="Fourth slide"> </a>
                 </div>
             </div>
