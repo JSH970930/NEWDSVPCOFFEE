@@ -28,12 +28,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.project.dto.Policy_BoardRequestDto;
-
+import com.project.dto.Economy_BoardRequestDto;
 import com.project.dto.FileDto;
 import com.project.dto.MemberDto;
 import com.project.dto.NoticeRequestDto;
 import com.project.entity.Policy_Board;
-
+import com.project.service.Economy_BoardService;
 import com.project.service.FileService;
 import com.project.service.MemberService;
 import com.project.service.Policy_BoardService;
@@ -50,11 +50,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class DsvpController {
 	
-	private final Policy_BoardService boardService;
+	private final Economy_BoardService boardService;
 
 	
 	@GetMapping("/DSVP/*/view")
-public String getNoticeViewPage(Model model, Policy_BoardRequestDto boardrequestdto) throws Exception {
+public String getNoticeViewPage(Model model, Economy_BoardRequestDto boardrequestdto) throws Exception {
 		
 		try {
 			if(boardrequestdto.getId() != null) {

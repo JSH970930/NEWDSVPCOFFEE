@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.project.dto.Economy_BoardRequestDto;
 import com.project.entity.Economy_Board;
+import com.project.entity.Policy_Board;
 
 
 
@@ -35,9 +36,8 @@ public interface Economy_BoardRepository extends JpaRepository<Economy_Board, Lo
 			+ "WHERE ID = :#{#boardRequestDto.id}";
 			
 	
-	static final String UPDATE_BOARD_READ_CNT_INC = "UPDATE economy_board "
-			+ "SET READ_CNT = READ_CNT + 1 "
-			+ "WHERE ID = : id";
+	static final String UPDATE_BOARD_READ_CNT_INC = "UPDATE economy_board " + "SET read_cnt = read_cnt + 1 "
+			+ "WHERE id = :id";
 	
 	static final String DELETE_BOARD = "DELETE FROM economy_board "
 			+ "WHERE ID IN (:deleteList)";
@@ -63,5 +63,7 @@ public interface Economy_BoardRepository extends JpaRepository<Economy_Board, Lo
 	
 
 public Page<Economy_Board> findByTitleContaining(Pageable pageable, String searchKeyword);	
+
+public Page<Economy_Board> findByContentContaining(Pageable pageable, String searchKeyword); 
 
 }

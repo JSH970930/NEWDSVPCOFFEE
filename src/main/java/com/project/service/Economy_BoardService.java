@@ -20,8 +20,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.project.dto.Economy_BoardRequestDto;
 import com.project.dto.Economy_BoardResponseDto;
+import com.project.dto.Policy_BoardResponseDto;
 import com.project.entity.Economy_Board;
 import com.project.entity.Image;
+import com.project.entity.Policy_Board;
 import com.project.repository.Economy_BoardRepository;
 import com.project.repository.ImageRepository;
 
@@ -77,6 +79,22 @@ public class Economy_BoardService {
 	}
 	
 	@Transactional
+	   public HashMap<String, Object> findByContentContaining(Pageable pageable, String searchKeyword) {
+	      // TODO Auto-generated method stub
+
+	      HashMap<String, Object> resultMap = new HashMap<String, Object>();
+	     
+	      Page<Economy_Board> list = boardRepository.findByContentContaining(pageable, searchKeyword);
+	   
+	      resultMap.put("list", list.stream().map(Economy_BoardResponseDto::new).collect(Collectors.toList()));
+	      resultMap.put("paging", list.getPageable());
+	      resultMap.put("totalCnt", list.getTotalElements());
+	      resultMap.put("totalPage", list.getTotalPages());
+	      
+	      return resultMap;
+	   }
+	
+	@Transactional
 	public Economy_BoardRequestDto getPost(Long id) {
 		Economy_Board board = boardRepository.findById(id).get();
 
@@ -97,6 +115,7 @@ public class Economy_BoardService {
 	
 	
 	public Economy_BoardResponseDto findById(Long id) {
+		boardRepository.updateBoardReadCntInc(id);
 		return new Economy_BoardResponseDto(boardRepository.findById(id).get());
 	}
 	
